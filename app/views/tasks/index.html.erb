@@ -1,0 +1,17 @@
+<h1>Todolist</h1>
+
+
+<p>
+  <%= link_to "Create a new task", new_task_path() =%>
+</p>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+          <%= link_to task.desc, task %>
+          <% if task.is_complete %>
+            (complete)
+          <% end %>
+    </li>
+  <% end %>
+</ul>
